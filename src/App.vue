@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<div class="vue-logo">
+			<img alt="Vue logo" src="./assets/logo.png">
+			<span>made with <em>VueJS</em></span>
+		</div>
+		<div class="columns">
+			<div class="column is-6 is-offset-3 u-text-center">
+				<br>
+				<h1>Design & Frontend</h1>
+				<h6>Monthly team lunch</h6>
+			</div>
+		</div>
+		<PickerComponent />
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+	import PickerComponent from './components/PickerComponent.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+	export default {
+		name: 'app',
+		components: {
+			PickerComponent
+		},
+		mounted() {
+			document.getElementById('app').style.minHeight = window.innerHeight + 'px';
+		}
+	}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
+	h1 {
+		font-size: 30px;
+		font-weight: bold;
+	}
 </style>
